@@ -1,0 +1,101 @@
+name: Issue Management
+
+on:
+  issues:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+
+jobs:
+  welcome-new-issues:
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Welcome new contributors
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const { number } = context.issue;
+          
+          // Check if this is the user's first issue
+          const issues = await github.rest.issues.listForRepo({
+            owner,
+            repo,
+            creator: context.actor,
+            state: 'all'
+          });
+          
+          if (issues.data.length === 1) {
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body: `👋 Thank you for opening your first issue! 
+
+              I appreciate your contribution to improving this academic website. Please provide as much detail as possible to help me understand and address your concern.
+
+              If this is a bug report, please include:
+              - Steps to reproduce
+              - Expected behavior
+              - Actual behavior
+              - Browser/device information
+
+              If this is a feature request, please describe:
+              - The use case or problem
+              - Your proposed solution
+              - Any alternatives you've considered
+
+              I'll review your issue as soon as possible!`
+            });
+          }
+
+  auto-label-issues:
+    if: github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Auto-label issues
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const { owner, repo } = context.repo;
+          const { number, title, body } = context.issue;
+          const issueText = (title + ' ' + body).toLowerCase();
+          
+          const labels = [];
+          
+          // Bug-related keywords
+          if (issueText.includes('bug') || issueText.includes('error') || issueText.includes('broken') || issueText.includes('issue')) {
+            labels.push('bug');
+          }
+          
+          // Enhancement-related keywords
+          if (issueText.includes('feature') || issueText.includes('enhancement') || issueText.includes('improvement')) {
+            labels.push('enhancement');
+          }
+          
+          // Documentation-related keywords
+          if (issueText.includes('documentation') || issueText.includes('docs') || issueText.includes('readme')) {
+            labels.push('documentation');
+          }
+          
+          // Design-related keywords
+          if (issueText.includes('design') || issueText.includes('style') || issueText.includes('css') || issueText.includes('layout')) {
+            labels.push('design');
+          }
+          
+          // Performance-related keywords
+          if (issueText.includes('slow') || issueText.includes('performance') || issueText.includes('speed')) {
+            labels.push('performance');
+          }
+          
+          if (labels.length > 0) {
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: number,
+              labels
+            });
+          }

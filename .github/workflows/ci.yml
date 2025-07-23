@@ -1,0 +1,69 @@
+name: CI - Code Quality Checks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3
+        bundler-cache: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: |
+        bundle install
+        if [ -f "package.json" ]; then
+          npm ci
+        fi
+
+    - name: Lint YAML files
+      run: |
+        # Check YAML syntax
+        find . -name "*.yml" -o -name "*.yaml" | xargs -I {} sh -c 'echo "Checking {}" && ruby -e "require \"yaml\"; YAML.load_file(\"{}\")"'
+
+    - name: Check Jekyll configuration
+      run: |
+        bundle exec jekyll doctor
+
+    - name: Build site (dry run)
+      run: |
+        bundle exec jekyll build --dry-run --verbose
+      env:
+        JEKYLL_ENV: development
+
+    - name: Check for broken links (if htmlproofer is available)
+      run: |
+        if bundle list | grep -q htmlproofer; then
+          bundle exec jekyll build
+          bundle exec htmlproofer ./_site --disable-external --check-html --check-img-http
+        else
+          echo "HTMLProofer not installed - skipping link check"
+        fi
+      continue-on-error: true
+
+    - name: Security audit (if applicable)
+      run: |
+        if [ -f "Gemfile.lock" ]; then
+          bundle audit check --update
+        fi
+        if [ -f "package-lock.json" ]; then
+          npm audit --audit-level=moderate
+        fi
+      continue-on-error: true
