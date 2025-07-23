@@ -2,14 +2,14 @@
 # the commented lines are the default social media links supported by the template
 # the socials will be displayed in the order they are defined here
 
+email: wchen108@uw.edu # your email address
 linkedin_username: will-chenomics # your LinkedIn user name
 github_username: willchen108 # your GitHub user name
 scholar_userid: qocF0H4AAAAJ # your Google Scholar ID
 x_username: wchenomics # your X handle
 bluesky_url: chenomics.bsky.social # your bluesky URL
+orcid_id: 0000-0002-5255-4166 # your ORCID ID
 
-#email: wchen108@uw.edu # your email address
-#orcid_id: 0000-0002-5255-4166 # your ORCID ID
 # research_gate_profile: # your profile on ResearchGate
 #rss_icon: true # set to true to show the RSS icon
 # semanticscholar_id: # your Semantic Scholar ID

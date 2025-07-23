@@ -1,11 +1,45 @@
 ---
-layout: cv
+layout: page
 permalink: /cv/
 title: cv
-nav: false #true
+nav: true
 nav_order: 5
-cv_pdf: example_pdf.pdf # you can also use external links here
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
+description: My curriculum vitae
 ---
+
+<div class="cv-container">
+  <div class="pdf-viewer">
+    <embed src="{{ '/assets/pdf/Wei_Chen_resume.pdf' | relative_url }}" type="application/pdf" width="100%" height="800px" style="border: 1px solid #ddd;" />
+  </div>
+</div>
+
+<style>
+.cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.pdf-viewer {
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pdf-viewer embed {
+  width: 100%;
+  height: 800px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 0.5rem;
+  }
+  
+  .pdf-viewer embed {
+    height: 600px;
+  }
+}
+</style>

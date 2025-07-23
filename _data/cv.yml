@@ -2,51 +2,22 @@
   type: map
   contents:
     - name: Full Name
-      value: Wei Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Wei Chen
+    - name: Email
+      value: wchen108@uw.edu
+    - name: Location
+      value: Seattle, WA
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: PhD in Genome Sciences
+      institution: University of Washington, Seattle, WA
+      year: Current
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
-
-- title: Experience
-  type: time_table
-  contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+        - Genomic technology development
+        - CRISPR systems and genome engineering
+        - Computational prediction of editing outcomes
 
 - title: Honors and Awards
   type: time_table
@@ -55,19 +26,10 @@
       items:
         - Damon Runyon Postdoctoral Fellowship
 
-- title: Academic Interests
-  type: Genome engineering
-  contents:
-    - title: Protein design
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Research Focus
   type: list
   contents:
-    - <u>Hobbies:</u> Reading, running, photography, running. 
+    - CRISPR technology development and optimization
+    - Machine learning for genomic outcome prediction
+    - Biophysical approaches to genome engineering
+    - Precision genome editing tools 

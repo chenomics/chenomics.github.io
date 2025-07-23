@@ -241,159 +241,7 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// Navbar customization
-
-.navbar {
-  box-shadow: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0.95;
-}
-
-.navbar .dropdown-menu {
-  background-color: var(--global-bg-color);
-  border: 1px solid var(--global-divider-color);
-
-  a:not(.active) {
-    color: var(--global-text-color);
-  }
-
-  a:hover {
-    color: var(--global-hover-color);
-  }
-
-  .dropdown-divider {
-    border-top: 1px solid var(--global-divider-color) !important;
-  }
-}
-
-.dropdown-item {
-  color: var(--global-text-color);
-
-  &:hover {
-    color: var(--global-hover-color);
-    background-color: var(--global-bg-color);
-  }
-}
-
-.navbar.navbar-light {
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .navbar-brand {
-    color: var(--global-text-color);
-  }
-
-  .navbar-nav .nav-item .nav-link {
-    color: var(--global-text-color);
-
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-
-  .navbar-nav .nav-item.active > .nav-link {
-    background-color: inherit;
-    font-weight: bolder;
-    color: var(--global-theme-color);
-
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-
-  .navbar-brand.social {
-    padding-bottom: 0;
-    padding-top: 0;
-    font-size: 1.7rem;
-
-    a {
-      img {
-        width: 1.7rem;
-        height: 1.7rem;
-        margin-bottom: 0.5rem;
-        // margin: 0.5rem;
-      }
-
-      svg {
-        width: 1.7rem;
-        height: 1.7rem;
-        margin-bottom: 0.5rem;
-
-        image {
-          width: 1.7rem;
-          height: 1.7rem;
-        }
-      }
-
-      i::before {
-        color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
-      }
-
-      &:hover {
-        i::before {
-          color: var(--global-theme-color);
-        }
-      }
-    }
-  }
-}
-
-.navbar-toggler {
-  .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: var(--global-text-color);
-    border-radius: 1px;
-    margin-bottom: 4px;
-    transition: all 0.2s;
-  }
-
-  .top-bar {
-    transform: rotate(45deg);
-    transform-origin: 10% 10%;
-  }
-
-  .middle-bar {
-    opacity: 0;
-  }
-
-  .bottom-bar {
-    transform: rotate(-45deg);
-    transform-origin: 10% 90%;
-  }
-}
-
-.navbar-toggler.collapsed {
-  .top-bar {
-    transform: rotate(0);
-  }
-
-  .middle-bar {
-    opacity: 1;
-  }
-
-  .bottom-bar {
-    transform: rotate(0);
-  }
-}
-
-#light-toggle,
-#search-toggle {
-  padding: 0;
-  border: 0;
-  background-color: inherit;
-  color: var(--global-text-color);
-
-  &:hover {
-    color: var(--global-hover-color);
-  }
-}
+// Navbar customization moved to _papermod.scss
 
 // Social (bottom)
 
@@ -401,23 +249,23 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2.5rem;
 
     a {
       img {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-bottom: 1rem;
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 0.5rem;
       }
 
       svg {
-        width: 3.5rem;
-        height: 4rem;
-        margin-bottom: 0.5rem;
+        width: 2.2rem;
+        height: 2.5rem;
+        margin-bottom: 0.3rem;
 
         image {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 2.2rem;
+          height: 2.2rem;
         }
       }
 
@@ -441,50 +289,21 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-.wechat-modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.wechat-modal > img {
-  display: block;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 33%;
-  max-width: 400px;
-  transform: translate(-50%, -50%);
-}
-
-@media only screen and (max-width: 400px) {
-  .wechat-modal > img {
-    width: 100%;
-  }
-}
-
 // Footer
 footer.fixed-bottom {
-  background-color: var(--global-footer-bg-color);
-  font-size: 0.75rem;
+  background-color: transparent;
+  border-top: 1px solid var(--global-divider-color);
+  font-size: 0.7rem;
 
   .container {
-    color: var(--global-footer-text-color);
-    padding-top: 9px;
-    padding-bottom: 8px;
+    color: var(--global-text-color-light);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     text-align: center;
   }
 
   a {
-    color: var(--global-footer-link-color);
+    color: var(--global-text-color-light);
 
     &:hover {
       color: var(--global-theme-color);
@@ -495,19 +314,31 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-size: 0.9rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  background-color: transparent;
+  color: var(--global-text-color-light);
 
   .container {
     text-align: center;
+  }
+
+  a {
+    color: var(--global-text-color-light);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
   }
 }
 
 // CV
 
 .cv {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   .card {
     background-color: var(--global-card-bg-color);
@@ -729,9 +560,6 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
 
-      .preview {
-      }
-
       .abbr {
         margin-bottom: 0.5rem;
 
@@ -772,6 +600,7 @@ footer.sticky-bottom {
         > em {
           border-bottom: 1px solid;
           font-style: normal;
+          font-weight: bold;
         }
 
         > span.more-authors {
@@ -1168,136 +997,6 @@ swiper-container {
   }
 }
 
-// Ninja Keys
-// for more options, check https://github.com/ssleptsov/ninja-keys?tab=readme-ov-file#css-variables
-ninja-keys {
-  --ninja-accent-color: var(--global-theme-color);
-  --ninja-icon-size: 0px;
-  --ninja-modal-background: var(--global-bg-color);
-  --ninja-z-index: 1031;
-}
-
-ninja-keys::part(ninja-input) {
-  color: var(--ninja-selected-text-color);
-}
-
-ninja-keys::part(ninja-input-wrapper) {
-  background: var(--global-bg-color);
-}
-
-// newsletter
-.newsletter-form-container {
-  margin-bottom: 20px;
-}
-
-.newsletter-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.newsletter-form-input,
-.bibsearch-form-input {
-  color: var(--global-newsletter-text-color);
-  background: var(--global-newsletter-bg-color);
-  border: 1px solid var(--global-newsletter-text-color);
-  outline: none;
-  margin: 0px 10px 0px 0px;
-  width: 100%;
-  max-width: 350px;
-  min-width: 100px;
-  box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
-  padding: 8px 12px;
-}
-
-.newsletter-form-input:focus {
-  border-color: var(--global-theme-color) !important;
-}
-
-.newsletter-form-button {
-  background: var(--global-theme-color);
-  color: var(--global-bg-color);
-  display: flex;
-  width: min-content;
-  max-width: 200px;
-  white-space: nowrap;
-  height: 38px;
-  align-items: center;
-  flex-direction: row;
-  padding: 9px 17px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.newsletter-loading-button {
-  background: var(--global-theme-color);
-  color: var(--global-bg-color);
-  display: none;
-  width: min-content;
-  max-width: 300px;
-  white-space: nowrap;
-  height: 38px;
-  align-items: center;
-  flex-direction: row;
-  padding: 9px 17px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
-  border-radius: 6px;
-  text-align: center;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  border: none;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.newsletter-success {
-  color: var(--global-text-color);
-  display: none;
-  align-items: center;
-  width: 100%;
-}
-
-.newsletter-error {
-  color: var(--global-theme-color);
-  display: none;
-  align-items: center;
-  width: 100%;
-}
-
-.newsletter-back-button {
-  color: var(--global-theme-color);
-  margin: 10px auto;
-  text-align: center;
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-@media (max-width: 575px) {
-  .newsletter-form-input,
-  .newsletter-form-button,
-  .newsletter-loading-button,
-  .newsletter-success,
-  .newsletter-error {
-    font-size: 16px !important;
-  }
-  .newsletter-form-container {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-}
-
 // popover is used for annotation in bib.liquid
 .popover {
   background-color: var(--global-bg-color);
@@ -1335,10 +1034,4 @@ ninja-keys::part(ninja-input-wrapper) {
   .arrow:before {
     border-bottom-color: var(--global-divider-color);
   }
-}
-
-// highlight-search-term
-::highlight(search) {
-  background-color: var(--global-theme-color);
-  color: var(--global-text-color);
 }

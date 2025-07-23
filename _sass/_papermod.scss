@@ -1,0 +1,429 @@
+/*******************************************************************************
+ * PaperMod-inspired styling for Jekyll site
+ ******************************************************************************/
+
+/*******************************************************************************
+ * NAVBAR CORE STRUCTURE
+ ******************************************************************************/
+
+/* Main Navbar Container */
+.navbar {
+  background-color: var(--global-bg-color) !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 1rem 0;
+  min-height: 60px; // 56px in _base.scss
+  position: fixed; // Make navbar stick to top
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  opacity: 1; // Ensure full opacity
+  // Base.scss settings: opacity: 0.95;
+}
+
+/* Navbar Layout */
+.navbar .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0rem;
+}
+
+/* Body Padding for Fixed Navbar */
+body.fixed-top-nav {
+  padding-top: 80px !important; // Increased to account for fixed navbar (60px + padding)
+}
+
+body:not(.fixed-top-nav) {
+  padding-top: 80px; // Match the navbar height + some spacing
+}
+
+/*******************************************************************************
+ * NAVBAR BACKGROUND & STYLING
+ ******************************************************************************/
+
+/* Comprehensive Background Styling */
+.navbar,
+.navbar-light {
+  background-color: var(--global-bg-color) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Child Elements Background */
+.nav,
+.navbar-nav,
+.navbar-collapse {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: none !important; // Disable transitions that cause shifts
+}
+
+/*******************************************************************************
+ * NAVBAR BRAND (SITE TITLE)
+ ******************************************************************************/
+
+.navbar-brand,
+.navbar-brand.title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.1em;
+  box-shadow: none !important;
+  
+  &:hover {
+    color: var(--global-theme-color) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+  
+  &:focus,
+  &:active {
+    color: var(--global-text-color) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/*******************************************************************************
+ * NAVIGATION LINKS
+ ******************************************************************************/
+
+/* Regular Navigation Links */
+.navbar-nav .nav-link {
+  font-size: 1.2rem; // Fixed: was incorrectly using font-weight
+  font-weight: normal; // Added proper font-weight
+  color: var(--global-text-color) !important;
+  padding: 0.5rem 0rem !important; // Added consistent vertical padding
+  margin: 0rem !important;
+  margin-left: 1rem !important;
+  margin-right: 0rem !important;
+  border-radius: 0px;
+  transition: none;
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+  will-change: auto;
+  box-shadow: none !important;
+  
+  &:hover {
+    background-color: transparent;
+    color: var(--global-hover-color) !important;
+    text-decoration: none;
+    box-shadow: none !important;
+  }
+  
+  &:focus,
+  &:active,
+  &.active {
+    background-color: transparent !important;
+    color: var(--global-text-color) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/* Active Navigation Item with Underline */
+.navbar-nav .nav-item.active > .nav-link {
+  background-color: transparent !important;
+  font-size: 1.2rem; // Made consistent with regular nav links
+  font-weight: normal !important;
+  color: var(--global-theme-color) !important;
+  position: relative;
+  display: inline-block;
+  margin: 0rem !important;
+  margin-left: 1rem !important; // Match regular nav-link
+  margin-right: 0rem !important;
+  padding: 0.5rem 0rem !important; // Match regular nav-link height
+  box-shadow: none !important;
+  outline: none !important;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0.7rem; // 8px below the nav-link (outside the padding area)
+    left: 0; // Start from the left edge of the text
+    width: 100%;
+    height: 2px;
+    background-color: var(--global-theme-color);
+  }
+  
+  &:hover {
+    color: var(--global-hover-color) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    
+    &:after {
+      background-color: var(--global-hover-color);
+    }
+  }
+  
+  &:focus,
+  &:active {
+    color: var(--global-theme-color) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/*******************************************************************************
+ * NAVBAR BUTTONS & CONTROLS
+ ******************************************************************************/
+
+/* Light/Dark Mode Toggle Button */
+#light-toggle {
+  padding: 0rem 0rem;
+  padding-top: 0px;
+  margin-bottom: 0.5rem;
+  border: 0;
+  background-color: inherit;
+  color: var(--global-text-color);
+  font-size: 1.2rem; // Controls icon size
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--global-hover-color);
+  }
+}
+
+/* Mobile Navbar Toggler (Hamburger Menu) */
+.navbar-toggler {
+  .icon-bar {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: var(--global-text-color);
+    border-radius: 1px;
+    margin-bottom: 0px;
+    transition: all 0.1s;
+  }
+
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+
+  .middle-bar {
+    opacity: 0;
+  }
+
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggler.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+
+  .middle-bar {
+    opacity: 1;
+  }
+
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}
+
+/*******************************************************************************
+ * BOOTSTRAP OVERRIDES (PREVENT UNWANTED STYLING)
+ ******************************************************************************/
+
+/* Universal Navbar Element Overrides */
+.navbar * {
+  &:focus,
+  &:active,
+  &.active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+// /* Specific Nav Link Overrides */
+// .navbar .nav-link,
+// .navbar .navbar-nav .nav-link,
+// .navbar .nav-item .nav-link {
+//   &:focus {
+//     box-shadow: none !important;
+//     outline: none !important;
+//     background-color: transparent !important;
+//   }
+  
+//   &:active {
+//     box-shadow: none !important;
+//     outline: none !important;
+//     background-color: transparent !important;
+//   }
+  
+//   &.active {
+//     box-shadow: none !important;
+//     outline: none !important;
+//   }
+// }
+
+/* Button Element Overrides */
+.navbar button,
+.navbar .btn {
+  box-shadow: none !important;
+  
+  &:focus,
+  &:active,
+  &.active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+/*******************************************************************************
+ * REFERENCE COMMENTS (BASE.SCSS SETTINGS)
+ ******************************************************************************/
+
+/* 
+Alternative base.scss navigation styles for reference:
+- font-size: calc(1.2rem);
+- position: relative;
+- padding: 0rem 0rem;
+- margin: 0rem;
+- transition: all 0.2s ease; (disabled for consistency)
+*/
+
+/* PaperMod Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; // default browser font-size in _base.scss
+  line-height: 1.6;
+  color: var(--global-text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; // default in _base.scss
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--global-text-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* PaperMod Content Layout */
+.container {
+  max-width: 800px;
+}
+
+.post-content {
+  margin-top: 2rem;
+}
+
+/* PaperMod Card Style for Publications */
+.bibliography .row {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.bibliography .row:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bibliography .preview img {
+  border-radius: 6px;
+  border: 1px solid var(--global-divider-color);
+}
+
+/* PaperMod Button Styling */
+.btn-primary {
+  background-color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--global-hover-color);
+  border-color: var(--global-hover-color);
+  transform: translateY(-1px);
+}
+
+/* PaperMod Footer */
+footer {
+  border-top: 1px solid var(--global-divider-color);
+  background-color: var(--global-bg-color);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+/* PaperMod Social Icons */
+.social .contact-icons {
+  font-size: 1.8rem;
+}
+
+.social .contact-icons a {
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.social .contact-icons a:hover {
+  background-color: var(--global-theme-color);
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* PaperMod News/Announcements */
+.news table {
+  border: none;
+  background: var(--global-card-bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news th, .news td {
+  border: none !important;
+  padding: 1rem !important;
+}
+
+.news tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* PaperMod Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand.title {
+    font-size: 1.3rem !important;
+  }
+}

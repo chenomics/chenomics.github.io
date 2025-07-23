@@ -1,14 +1,20 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// Toggle between light and dark theme settings, with system as default.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
-    setThemeSetting("light");
+    // Determine current computed theme and switch to opposite
+    let computedTheme = determineComputedTheme();
+    if (computedTheme == "dark") {
+      setThemeSetting("light");
+    } else {
+      setThemeSetting("dark");
+    }
   } else if (themeSetting == "light") {
     setThemeSetting("dark");
   } else {
-    setThemeSetting("system");
+    setThemeSetting("light");
   }
 };
 
@@ -27,8 +33,6 @@ let applyTheme = () => {
 
   transTheme();
   setHighlight(theme);
-  setGiscusTheme(theme);
-  setSearchTheme(theme);
 
   // if mermaid is not defined, do nothing
   if (typeof mermaid !== "undefined") {
@@ -91,20 +95,6 @@ let setHighlight = (theme) => {
     document.getElementById("highlight_theme_dark").media = "none";
     document.getElementById("highlight_theme_light").media = "";
   }
-};
-
-let setGiscusTheme = (theme) => {
-  function sendMessage(message) {
-    const iframe = document.querySelector("iframe.giscus-frame");
-    if (!iframe) return;
-    iframe.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
-  }
-
-  sendMessage({
-    setConfig: {
-      theme: theme,
-    },
-  });
 };
 
 let addMermaidZoom = (records, observer) => {
@@ -185,17 +175,6 @@ let setVegaLiteTheme = (theme) => {
       vegaEmbed(elem, JSON.parse(jsonData));
     }
   });
-};
-
-let setSearchTheme = (theme) => {
-  const ninjaKeys = document.querySelector("ninja-keys");
-  if (!ninjaKeys) return;
-
-  if (theme === "dark") {
-    ninjaKeys.classList.add("dark");
-  } else {
-    ninjaKeys.classList.remove("dark");
-  }
 };
 
 let transTheme = () => {
