@@ -20,18 +20,15 @@ jobs:
         ruby-version: 3.3
         bundler-cache: true
 
-    - name: Setup Node.js
+    - name: Setup Node.js (if needed)
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+      if: hashFiles('package.json') != ''
 
     - name: Install dependencies
       run: |
         bundle install
-        if [ -f "package.json" ]; then
-          npm ci
-        fi
 
     - name: Lint YAML files
       run: |

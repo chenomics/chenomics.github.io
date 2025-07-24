@@ -29,17 +29,18 @@ jobs:
         ruby-version: 3.3
         bundler-cache: true
 
-    - name: Setup Node.js (for additional processing)
+    - name: Setup Node.js (if needed)
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
+      if: hashFiles('package.json') != ''
         
-    - name: Install Node dependencies
+    - name: Install Node dependencies (if needed)
       run: |
         if [ -f "package.json" ]; then
           npm ci
         fi
+      if: hashFiles('package.json') != ''
 
     - name: Configure Jekyll
       run: |
