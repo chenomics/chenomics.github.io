@@ -11,3 +11,5 @@ assets/libs/
 node_modules/
 vendor
 .idea
+fix_bib_authors.py
+papers.bib.backup
