@@ -26,14 +26,6 @@ back_to_top: true # set to false to disable the back to top button
 # Theme
 # -----------------------------------------------------------------------------
 
-# repo color theme
-repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_trophies:
-  enabled: true
-  theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
-  theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
-
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
@@ -164,10 +156,7 @@ scholar:
   bibliography: papers.bib
   bibliography_template: bib
 
-  # Note: if you have latex math in your bibtex, the latex filter
-  # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
-  bibtex_filters: [latex, smallcaps, superscript]
+  # bibtex_filters: [latex, smallcaps, superscript]
 
   replace_strings: true
   join_strings: true
@@ -184,7 +173,6 @@ enable_publication_badges:
   altmetric: true # Altmetric badge 
   dimensions: true # Dimensions badge
   google_scholar: true # Google Scholar badge
-  inspirehep: true # Inspire HEP badge
 
 # Filter out certain bibtex entry keywords used internally from the bib output
 filtered_bibtex_keywords:
@@ -202,14 +190,12 @@ filtered_bibtex_keywords:
     code,
     google_scholar_id,
     html,
-    inspirehep_id,
     pdf,
     poster,
     preview,
     selected,
     slides,
     supp,
-    video,
     website,
   ]
 
@@ -237,7 +223,6 @@ lazy_loading_images: true # enables lazy loading of images (recommended)
 # Essential Features Only
 # -----------------------------------------------------------------------------
 
-enable_math: true # enables math typesetting (uses MathJax)
 enable_darkmode: true # enables switching between light/dark modes
 enable_project_categories: true # enables categorization of projects into multiple categories
 
@@ -264,38 +249,9 @@ third_party_libraries:
       js: "https://cdn.jsdelivr.net/npm/mdbootstrap@{{version}}/js/mdb.min.js"
     version: "4.20.0"
     
-  mathjax:
-    integrity:
-      js: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
-    url:
-      js: "https://cdn.jsdelivr.net/npm/mathjax@{{version}}/es5/tex-mml-chtml.js"
-    version: "3.2.2"
-    
   medium_zoom:
     integrity:
       js: "sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc="
     url:
       js: "https://cdn.jsdelivr.net/npm/medium-zoom@{{version}}/dist/medium-zoom.min.js"
     version: "1.1.0"
-
-# -----------------------------------------------------------------------------
-# Get external JSON data
-# -----------------------------------------------------------------------------
-
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references

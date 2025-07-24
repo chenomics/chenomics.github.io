@@ -10,9 +10,9 @@ x_username: wchenomics # your X handle
 bluesky_url: chenomics.bsky.social # your bluesky URL
 orcid_id: 0000-0002-5255-4166 # your ORCID ID
 
-# research_gate_profile: # your profile on ResearchGate
-#rss_icon: true # set to true to show the RSS icon
-# semanticscholar_id: # your Semantic Scholar ID
+
+# rss_icon: true # set to true to show the RSS icon
+
 # work_url: # work page URL
 
 # zotero_username: # your zotero username

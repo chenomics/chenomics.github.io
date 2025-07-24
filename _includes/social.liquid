@@ -10,22 +10,14 @@
       <a href="https://www.linkedin.com/in/{{ social[1] }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     {% when 'orcid_id' %}
       <a href="https://orcid.org/{{ social[1] }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-    {% when 'research_gate_profile' %}
-      <a href="https://www.researchgate.net/profile/{{ social[1] }}/" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
     {% when 'scholar_userid' %}
       <a href="https://scholar.google.com/citations?user={{ social[1] }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-    {% when 'semanticscholar_id' %}
-      <a href="https://www.semanticscholar.org/author/{{ social[1] }}" title="Semantic Scholar"><i class="ai ai-semantic-scholar"></i></a>
-    {% when 'stackoverflow_id' %}
-      <a href="https://stackoverflow.com/users/{{ social[1] }}" title="Stackoverflow"><i class="fa-brands fa-stack-overflow"></i></a>
     {% when 'strava_userid' %}
       <a href="https://www.strava.com/athletes/{{ social[1] }}" title="Strava"><i class="fa-brands fa-strava"></i></a>
     {% when 'work_url' %}
       <a href="{{ social[1] }}" title="Work"><i class="fa-solid fa-briefcase"></i></a>
     {% when 'x_username' %}
       <a href="https://twitter.com/{{ social[1] }}" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-    {% when 'zotero_username' %}
-      <a href="https://www.zotero.org/{{ social[1] }}" title="Zotero"><i class="ai ai-zotero"></i></a>
     {% else %}
       <a href="{{ social[1].url }}" title="{{ social[1].title }}">
         {% assign file_ext = social[1].logo | split: '.' | last %}
