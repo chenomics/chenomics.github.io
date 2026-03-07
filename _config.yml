@@ -17,7 +17,7 @@ keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your o
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: dna.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://yourdomain.com # the base hostname & protocol for your site
+url: https://chenomics.com # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
 back_to_top: true # set to false to disable the back to top button

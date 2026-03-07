@@ -23,4 +23,4 @@ I am **Wei Chen**, a genomicist developing new technologies to understand the ge
 
 I am currently a [Damon Runyon Postdoc Fellow](https://www.damonrunyon.org/) at [Institute of Protein Design](https://www.ipd.uw.edu/), working with [David Baker](https://www.bakerlab.org/). Previously, I did my Ph.D under the supervision of [Jay Shendure](https://krishna.gs.washington.edu/current.html).
 
-My research focuses on developing high-throughput **quantitative** technologies to understand human **genome and protein functions**. Currently, I am designing *de novo* proteins with novel functions to manipulate cell bahaviors. 
+My research focuses on developing high-throughput **quantitative** technologies to understand human **genome and protein functions**. Currently, I am designing *de novo* proteins with novel functions to manipulate cell behaviors. 
