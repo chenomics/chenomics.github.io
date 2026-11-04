@@ -14,6 +14,8 @@ layout: default
     <p class="desc">{{ page.subtitle }}</p>
   </header>
 
+  {% include central_dogma.liquid %}
+
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
@@ -63,6 +65,8 @@ layout: default
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
+
+    {% include helix_divider.liquid class="helix-divider--footer" %}
 
     <!-- Social -->
     {% if page.social %}

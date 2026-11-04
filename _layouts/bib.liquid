@@ -47,7 +47,25 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <!-- Title, linked to the publisher page when the entry has one.
+         entry_link is reassigned on every entry (including to an empty string)
+         because Liquid assigns persist across loop iterations. -->
+    {% if entry.html and entry.html contains '://' %}
+      {% assign entry_link = entry.html %}
+    {% elsif entry.html %}
+      {% assign entry_link = entry.html | prepend: '/assets/html/' | relative_url %}
+    {% elsif entry.doi %}
+      {% assign entry_link = entry.doi | prepend: 'https://doi.org/' %}
+    {% else %}
+      {% assign entry_link = '' %}
+    {% endif %}
+    <div class="title">
+      {% if entry_link != '' %}
+        <a href="{{ entry_link }}" class="title-link">{{ entry.title }}</a>
+      {% else %}
+        {{ entry.title }}
+      {% endif %}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -192,21 +210,11 @@
       {% if entry.abstract %}
         <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
       {% endif %}
-      {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
-      {% endif %}
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
-      {% endif %}
-      {% if entry.html %}
-        {% if entry.html contains '://' %}
-          <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
-        {% else %}
-          <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
-        {% endif %}
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}

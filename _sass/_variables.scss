@@ -32,6 +32,17 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// Molecular palette (DNA / protein design flavour)
+$bio-teal: #0e7490 !default; // light-mode accent, cyan-700
+$bio-teal-deep: #155e75 !default; // hover / pressed
+$bio-mint: #49cdbb !default; // dark-mode accent
+$bio-amber: #b45309 !default; // light-mode highlight
+$bio-amber-light: #f0a04b !default; // dark-mode highlight
+$bio-helix: #0e7490 !default; // helix artwork stroke
+
+// Typography
+$serif-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !default;
+
 // Theme colors
 
 $code-bg-color-light: rgba($purple-color, 0.05);
