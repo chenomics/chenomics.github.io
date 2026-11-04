@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Hello world, this website is oneline now.
+Hello world, this website is online now.

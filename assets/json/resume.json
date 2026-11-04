@@ -1,13 +1,11 @@
 {
   "basics": {
     "name": "Wei Chen",
+    "label": "Damon Runyon Postdoctoral Fellow, Institute for Protein Design",
     "email": "wchen108@uw.edu",
-    "phone": "(206) 123-4567",
     "url": "https://chenomics.com/",
-    "summary": "let's see how this works",
+    "summary": "Genomicist developing high-throughput quantitative technologies to understand genome and protein function, currently designing de novo proteins with novel functions to manipulate cell behaviour.",
     "location": {
-      "address": "MolEs 442",
-      "postalCode": "98115",
       "city": "Seattle",
       "countryCode": "US",
       "region": "Washington"
@@ -15,22 +13,54 @@
     "profiles": [
       {
         "network": "X",
-        "username": "",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "wchenomics",
+        "url": "https://x.com/wchenomics"
+      },
+      {
+        "network": "GitHub",
+        "username": "willchen108",
+        "url": "https://github.com/willchen108"
+      },
+      {
+        "network": "Google Scholar",
+        "username": "Wei Chen",
+        "url": "https://scholar.google.com/citations?user=qocF0H4AAAAJ"
+      },
+      {
+        "network": "ORCID",
+        "username": "0000-0002-5255-4166",
+        "url": "https://orcid.org/0000-0002-5255-4166"
       }
     ]
   },
   "work": [
     {
-      "institution": "University of Washington",
+      "institution": "University of Washington, Institute for Protein Design",
       "location": "Seattle, WA, United States",
-      "position": "Postdoctoral Researcher",
-      "startDate": "2022-07-01",
-      "summary": "De novo design of proteins for precise gene regulation.",
-      "highlights": ["Protein design","Quantum Cryptography"]
+      "position": "Damon Runyon Postdoctoral Fellow",
+      "startDate": "2022-11-01",
+      "summary": "De novo protein design for programmable gene regulation, with David Baker.",
+      "highlights": [
+        "High-throughput functional screening platform for de novo designed proteins",
+        "Synthetic transcription activators for programmable gene regulation",
+        "Sequence-specific DNA-binding proteins, yielding fully de novo designed transcription factors",
+        "Allosterically regulated deaminases for conditional genomic footprinting"
+      ]
+    },
+    {
+      "institution": "University of Washington, Department of Genome Sciences",
+      "location": "Seattle, WA, United States",
+      "position": "Graduate Research Assistant",
+      "startDate": "2016-03-01",
+      "endDate": "2022-10-31",
+      "summary": "Genomic technology development and molecular recording, with Jay Shendure.",
+      "highlights": [
+        "ENGRAM, a prime editing-based recorder writing cellular signalling into DNA",
+        "Prime-del, paired prime editing for precise genomic deletions up to 10 kb",
+        "Lindel, a machine learning model of CRISPR/Cas9 repair outcomes"
+      ]
     }
   ],
-
   "education": [
     {
       "institution": "University of Washington",
@@ -51,7 +81,7 @@
     {
       "institution": "Shandong University",
       "location": "Jinan, China",
-      "area": "Biology",
+      "area": "Biological Science",
       "studyType": "BS",
       "startDate": "2008-09-01",
       "endDate": "2012-06-15"
@@ -63,41 +93,34 @@
       "date": "2023-07-01",
       "awarder": "Damon Runyon Cancer Research Foundation",
       "url": "https://www.damonrunyon.org/"
-      // "summary": "The Damon Runyon Postdoctoral Fellowship Award supports the training of the most promising young scientists in cancer research."
     }
   ],
-  
-  // "publications": [
-  //   {
-  //     "name": "Zur Elektrody/namik bewegter Körper",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1905-06-30",
-  //     "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-  //     "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-  //   },
-  //   {
-  //     "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1905-03-18",
-  //     "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-  //     "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-  //   },
-  //   {
-  //     "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1916-03-20",
-  //     "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-  //     "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-  //   }
-  // ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Protein design",
+      "icon": "fa-solid fa-cubes",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing"
+        "De novo design",
+        "Deep learning design methods",
+        "High-throughput functional screens"
+      ]
+    },
+    {
+      "name": "Genome engineering",
+      "icon": "fa-solid fa-dna",
+      "keywords": [
+        "Prime editing",
+        "CRISPR screens",
+        "Molecular recording"
+      ]
+    },
+    {
+      "name": "Computation",
+      "icon": "fa-solid fa-code",
+      "keywords": [
+        "Machine learning",
+        "Python",
+        "Sequencing data analysis"
       ]
     }
   ],
@@ -115,13 +138,13 @@
   ],
   "interests": [
     {
-      "name": "Physics",
+      "name": "Research interests",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing"
+        "Gene regulation",
+        "Molecular recording",
+        "Biophysics of the genome"
       ]
     }
-  ],
-
-
+  ]
+}

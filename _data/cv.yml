@@ -5,31 +5,99 @@
       value: Wei Chen
     - name: Email
       value: wchen108@uw.edu
+    - name: Position
+      value: Damon Runyon Postdoctoral Fellow, Institute for Protein Design
     - name: Location
       value: Seattle, WA
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD in Genome Sciences
+    - title: PhD in Molecular Engineering
       institution: University of Washington, Seattle, WA
-      year: Current
+      year: 2015 - 2022
       description:
-        - Genomic technology development
-        - CRISPR systems and genome engineering
-        - Computational prediction of editing outcomes
+        - "Field of focus: biological engineering and genome sciences"
+        - "Thesis advisor: Jay Shendure"
+    - title: MS in Applied and Engineering Physics
+      institution: Cornell University, Ithaca, NY
+      year: 2013 - 2015
+    - title: BS in Biological Science
+      institution: Shandong University, Jinan, China
+      year: 2008 - 2012
+
+- title: Research Experience
+  type: time_table
+  contents:
+    - title: Damon Runyon Postdoctoral Fellow
+      institution: University of Washington, Institute for Protein Design
+      year: 2022 - present
+      description:
+        - "Advisor: David Baker"
+        - Built a high-throughput functional screening platform for de novo designed proteins.
+        - Designed synthetic transcription activators for programmable gene regulation.
+        - Designed sequence-specific DNA-binding proteins, yielding fully de novo designed transcription factors.
+        - Designed allosterically regulated deaminases for conditional genomic footprinting of target proteins.
+    - title: Graduate Research Assistant
+      institution: University of Washington, Department of Genome Sciences
+      year: 2016 - 2022
+      description:
+        - "Advisor: Jay Shendure"
+        - Developed ENGRAM, a prime editing-based molecular recorder that writes transient cellular signalling into permanent, multiplexed DNA edits.
+        - Developed Prime-del, a paired prime editing method for precise genomic deletions up to 10 kb.
+        - Developed Lindel, a machine learning model that predicts CRISPR/Cas9 double-strand break repair outcomes.
+    - title: Undergraduate Researcher
+      institution: Peking University
+      year: 2011 - 2013
+      description:
+        - "Advisors: Sunney X. Xie and Yujie Sun"
+        - Built a STORM super-resolution microscope and the image analysis software for single molecule localization.
+        - Applied super-resolution imaging to nuclear actin dynamics and gene regulation.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 2023
+    - year: 2023 - 2027
       items:
         - Damon Runyon Postdoctoral Fellowship
+
+- title: Selected Talks
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - "Genome Engineering: CRISPR Frontiers, CSHL meeting, Cold Spring Harbor, NY (talk)"
+        - Cascadia Advanced Genomic Technologies, Allen Institute, Seattle, WA (invited talk)
+        - Winter q-Bio Conference, Maui, HI (talk)
+    - year: 2022
+      items:
+        - "Genome Engineering: CRISPR Frontiers, CSHL meeting, Cold Spring Harbor, NY (talk)"
+        - AGTD Annual Meeting, The Jackson Laboratory for Genomic Medicine, Farmington, CT (talk)
+        - ENCODE Consortium Meeting, Stanford University, Stanford, CA (talk)
+        - Genome Engineering Seminar Series, Harvard Medical School, Cambridge, MA (invited talk)
+        - Winter q-Bio Conference, Oahu, HI (talk)
+        - New York Genome Center, New York, NY (invited talk)
+
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: Cornell University
+      year: 2014 - 2015
+      description:
+        - AEP 2640, Interfacing the Digital Domain with an Analog World (Fall 2014)
+        - "PHYS 2213, Physics II: Electromagnetism (Spring 2015)"
+
+- title: Mentoring
+  type: list
+  contents:
+    - Jenny Nathans, Shruti Jain (Shendure lab)
+    - Yuliya Politanska, Riley Quijano, Tabitha Tcheau (Baker lab)
 
 - title: Research Focus
   type: list
   contents:
-    - CRISPR technology development and optimization
-    - Machine learning for genomic outcome prediction
-    - Biophysical approaches to genome engineering
-    - Precision genome editing tools 
+    - De novo protein design for programmable gene regulation
+    - Molecular recording of cellular signalling and gene expression
+    - High-throughput quantitative measurement of genome and protein function
+    - Machine learning models of genome editing outcomes

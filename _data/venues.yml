@@ -1,9 +1,54 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Venue badges shown next to publications.
+# Each key must match the `abbr` field of an entry in _bibliography/papers.bib.
 
-"PhysRev":
-  url: https://journals.aps.org/
+"Nature":
+  url: https://www.nature.com/nature/
+  color: "#222222"
 
-"Vision":
-  color: "#009f36"
+"Science":
+  url: https://www.science.org/journal/science
+  color: "#b3242b"
+
+"Cell":
+  url: https://www.cell.com/cell/home
+  color: "#0d47a1"
+
+"Nat Biotechnol":
+  url: https://www.nature.com/nbt/
+  color: "#1b5e20"
+
+"Nat Protoc":
+  url: https://www.nature.com/nprot/
+  color: "#004d40"
+
+"Nat Rev Genet":
+  url: https://www.nature.com/nrg/
+  color: "#4a148c"
+
+"Nat Struct Mol Biol":
+  url: https://www.nature.com/nsmb/
+  color: "#37474f"
+
+"NAR":
+  url: https://academic.oup.com/nar
+  color: "#1c3f94"
+
+"eLife":
+  url: https://elifesciences.org/
+  color: "#0b6ca8"
+
+"Trends Genet":
+  url: https://www.cell.com/trends/genetics/home
+  color: "#b5551f"
+
+"ACS Chem Biol":
+  url: https://pubs.acs.org/journal/acbcct
+  color: "#7b2d26"
+
+"Clin Chem":
+  url: https://academic.oup.com/clinchem
+  color: "#455a64"
+
+"bioRxiv":
+  url: https://www.biorxiv.org/
+  color: "#8c2f2f"

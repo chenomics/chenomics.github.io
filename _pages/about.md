@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 
+subtitle: programmable gene expression · molecular recording · protein design
 
 profile:
   align: left

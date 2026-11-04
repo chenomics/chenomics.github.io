@@ -5,6 +5,10 @@ title: cv
 nav: false
 nav_order: 5
 description: My curriculum vitae
+# The CV is deliberately not published on the site: no PDF is uploaded and this
+# page is not built. Set `published: true` to turn it back on, and see
+# _data/cv.yml if you ever want a rendered HTML CV instead of a PDF embed.
+published: false
 ---
 
 <div class="cv-container">
